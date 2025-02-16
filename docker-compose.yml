@@ -1,7 +1,5 @@
 version: "3"
 
-name: minecraft
-
 services:
   minecraft:
     image: itzg/minecraft-server
