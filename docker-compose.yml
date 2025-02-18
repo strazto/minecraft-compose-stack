@@ -14,4 +14,4 @@ services:
         gamerule lavaSourceConversion true
     volumes:
       # attach the relative directory 'data' to the container's /data path
-      - "${docker_data_folder}/minecraft:/config"
+      - "${docker_data_folder}/minecraft/data:/data"
