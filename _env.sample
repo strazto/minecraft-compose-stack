@@ -1,0 +1,15 @@
+
+# Sets a nicer name when you bring it up 
+# Change to whatever you like or delete
+# COMPOSE_PROJECT_NAME=minecraft
+
+######################
+# Data paths 
+######################
+
+## Use this to set the parent folder for the config
+
+docker_data_folder=/media/data/docker_configs/
+
+# The minecraft data folder will be placed under the above: 
+# "${docker_data_folder}/minecraft/data"
