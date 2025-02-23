@@ -11,6 +11,7 @@ services:
     environment:
       EULA: "TRUE"
       MEMORY: "4G"
+      VIEW_DISTANCE: "32"
       RCON_CMDS_STARTUP: |-
         gamerule keepInventory true
         gamerule lavaSourceConversion true
