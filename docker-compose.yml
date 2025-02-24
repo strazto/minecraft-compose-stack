@@ -10,7 +10,7 @@ services:
       - "25565:25565"
     environment:
       EULA: "TRUE"
-      MEMORY: "4G"
+      MEMORY: "10G"
       VIEW_DISTANCE: "32"
       RCON_CMDS_STARTUP: |-
         gamerule keepInventory true
