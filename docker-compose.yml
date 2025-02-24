@@ -1,5 +1,8 @@
 version: "3"
 
+x-user: &user
+  user: "${UID:?must set UID in .env}:${GID:?must set GID in .env}"
+
 services:
   minecraft:
     image: itzg/minecraft-server
@@ -25,7 +28,7 @@ services:
   restore-backup:
     # Same image as mc, but any base image with bash and tar will work
     image: itzg/mc-backup
-    user: "${UID:?must set UID in .env}"
+    <<: *user
     restart: no
     entrypoint: restore-tar-backup
     volumes:
@@ -36,7 +39,7 @@ services:
       - "${docker_data_folder}/minecraft/backups:/backups:ro"
   backups:
     image: itzg/mc-backup
-    user: "${UID:?must set UID in .env}"
+    <<: *user
     depends_on:
       minecraft:
         condition: service_healthy

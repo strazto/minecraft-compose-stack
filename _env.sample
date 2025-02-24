@@ -22,5 +22,7 @@ docker_data_folder=/media/data/docker_configs/
 # Set this to run backup services as user of choice
 # to find this, try
 # id -u $USER
+# id -g $USER
 # (it's probably 1000)
 UID=1000
+GID=1000
