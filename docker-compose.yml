@@ -25,7 +25,7 @@ services:
   # restore-backup:
   #   # Same image as mc, but any base image with bash and tar will work
   #   image: itzg/mc-backup
-  #   # user: "1000"
+  #   # user: "${UID:?must set UID in .env}"
   #   restart: no
   #   entrypoint: restore-tar-backup
   #   volumes:
@@ -36,7 +36,7 @@ services:
   #     - "${docker_data_folder}/minecraft/backups:/backups:ro"
   backups:
     image: itzg/mc-backup
-    # user: "1000"
+    user: "${UID:?must set UID in .env}"
     depends_on:
       minecraft:
         condition: service_healthy

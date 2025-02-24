@@ -13,3 +13,14 @@ docker_data_folder=/media/data/docker_configs/
 
 # The minecraft data folder will be placed under the above: 
 # "${docker_data_folder}/minecraft/data"
+
+
+######################
+# Permissions
+######################
+
+# Set this to run backup services as user of choice
+# to find this, try
+# id -u $USER
+# (it's probably 1000)
+UID=1000
