@@ -15,25 +15,25 @@ services:
       RCON_CMDS_STARTUP: |-
         gamerule keepInventory true
         gamerule lavaSourceConversion true
-    # depends_on:
-    #   restore-backup:
-    #     condition: service_completed_successfully
+    depends_on:
+      restore-backup:
+        condition: service_completed_successfully
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - "${docker_data_folder}/minecraft/data:/data"
   # # "init" container for mc to restore the data volume when empty
-  # restore-backup:
-  #   # Same image as mc, but any base image with bash and tar will work
-  #   image: itzg/mc-backup
-  #   # user: "${UID:?must set UID in .env}"
-  #   restart: no
-  #   entrypoint: restore-tar-backup
-  #   volumes:
-  #     #  Write access to minecraft data.
-  #     #  Ensure the mount is the same
-  #     - "${docker_data_folder}/minecraft/data:/data"
-  #     # Read Only access to backups
-  #     - "${docker_data_folder}/minecraft/backups:/backups:ro"
+  restore-backup:
+    # Same image as mc, but any base image with bash and tar will work
+    image: itzg/mc-backup
+    user: "${UID:?must set UID in .env}"
+    restart: no
+    entrypoint: restore-tar-backup
+    volumes:
+      #  Write access to minecraft data.
+      #  Ensure the mount is the same
+      - "${docker_data_folder}/minecraft/data:/data"
+      # Read Only access to backups
+      - "${docker_data_folder}/minecraft/backups:/backups:ro"
   backups:
     image: itzg/mc-backup
     user: "${UID:?must set UID in .env}"
