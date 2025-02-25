@@ -18,12 +18,14 @@ services:
       RCON_CMDS_STARTUP: |-
         gamerule keepInventory true
         gamerule lavaSourceConversion true
+      TYPE: PURPUR
     depends_on:
       restore-backup:
         condition: service_completed_successfully
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - "${docker_data_folder}/minecraft/data:/data"
+      - "./plugins:/plugins"
   # # "init" container for mc to restore the data volume when empty
   restore-backup:
     # Same image as mc, but any base image with bash and tar will work
