@@ -3,6 +3,13 @@
 # Change to whatever you like or delete
 # COMPOSE_PROJECT_NAME=minecraft
 
+#####################
+# General
+#####################
+
+# Optional server url
+SERVER_ADDRESS=
+
 ######################
 # Data paths 
 ######################
