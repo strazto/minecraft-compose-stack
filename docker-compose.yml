@@ -21,6 +21,10 @@ services:
       TYPE: PURPUR
       # https://www.spigotmc.org/resources/discordsrv.18494/
       SPIGET_RESOURCES: "18494"
+
+      CFG_DISCORDSRV_BOT_TOKEN: "${DISCORDSRV_BOT_TOKEN}"
+      CFG_DISCORDSRV_GLOBAL_CHANNEL_ID: "${DISCORDSRV_GLOBAL_CHANNEL_ID}"
+      CFG_DISCORDSRV_CONSOLE_CHANNEL_ID: "${DISCORDSRV_CONSOLE_CHANNEL_ID}"
     depends_on:
       restore-backup:
         condition: service_completed_successfully

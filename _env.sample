@@ -26,3 +26,16 @@ docker_data_folder=/media/data/docker_configs/
 # (it's probably 1000)
 UID=1000
 GID=1000
+
+
+#####################
+# Plugins
+#####################
+
+# DiscordSRV
+# https://docs.discordsrv.com/installation/initial-setup#paste-the-token-into-configyml
+DISCORDSRV_BOT_TOKEN=
+
+# https://docs.discordsrv.com/installation/initial-setup#set-up-a-basic-channel-relay
+DISCORDSRV_GLOBAL_CHANNEL_ID=
+DISCORDSRV_CONSOLE_CHANNEL_ID=
