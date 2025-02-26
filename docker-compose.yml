@@ -19,6 +19,8 @@ services:
         gamerule keepInventory true
         gamerule lavaSourceConversion true
       TYPE: PURPUR
+      # https://www.spigotmc.org/resources/discordsrv.18494/
+      SPIGET_RESOURCES: "18494"
     depends_on:
       restore-backup:
         condition: service_completed_successfully
