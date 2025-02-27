@@ -46,3 +46,7 @@ DISCORDSRV_BOT_TOKEN=
 # https://docs.discordsrv.com/installation/initial-setup#set-up-a-basic-channel-relay
 DISCORDSRV_GLOBAL_CHANNEL_ID=
 DISCORDSRV_CONSOLE_CHANNEL_ID=
+
+# Spammy server events, players joining / leaving, restarts
+DISCORDSRV_EVENTS_CHANNEL_ID=
+
